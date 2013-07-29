@@ -14,7 +14,7 @@ public class SimpleConfiguration {
     public static final String KEYSTONE_PASSWORD = "dkclagottkf";
 
     // Identity Service & Admin
-    public static final String KEYSTONE_AUTH_URL = "http://10.0.1.3:5000/v2.0";
+    public static final String KEYSTONE_PUBLIC_URL = "http://10.0.1.3:5000/v2.0";
 
     public static final String KEYSTONE_ADMIN_URL = "http://10.0.1.3:35357/v2.0";
 

@@ -13,7 +13,7 @@ import com.woorea.openstack.keystone.model.Tenants;
  */
 public class TenantListsRequestSample {
     public static void main(String[] args) {
-        Keystone client = new Keystone(SimpleConfiguration.KEYSTONE_AUTH_URL);
+        Keystone client = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
 
         Access access = client
                 .tokens()
