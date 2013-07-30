@@ -1,8 +1,9 @@
-package me.rabierre.main;
+package me.rabierre.auth;
 
 import com.woorea.openstack.keystone.Keystone;
 import com.woorea.openstack.keystone.model.Access;
 import com.woorea.openstack.keystone.model.User;
+import me.rabierre.SimpleConfiguration;
 
 /**
  * Created with IntelliJ IDEA.

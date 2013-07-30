@@ -3,6 +3,7 @@ package me.rabierre.main;
 import com.woorea.openstack.keystone.Keystone;
 import com.woorea.openstack.keystone.model.Access;
 import com.woorea.openstack.keystone.model.Tenants;
+import me.rabierre.SimpleConfiguration;
 
 /**
  * Created with IntelliJ IDEA.

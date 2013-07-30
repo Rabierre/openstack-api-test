@@ -1,4 +1,4 @@
-package me.rabierre.main;
+package me.rabierre;
 
 /**
  * Created with IntelliJ IDEA.
