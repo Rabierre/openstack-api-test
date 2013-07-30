@@ -5,13 +5,6 @@ import com.woorea.openstack.keystone.model.Access;
 import com.woorea.openstack.keystone.model.User;
 import me.rabierre.SimpleConfiguration;
 
-/**
- * Created with IntelliJ IDEA.
- * User: rabierre
- * Date: 13. 7. 29.
- * Time: 오후 2:24
- * To change this template use File | Settings | File Templates.
- */
 public class CreateDeleteUserRequestSample {
     public static void main(String[] args) {
         Keystone client = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);

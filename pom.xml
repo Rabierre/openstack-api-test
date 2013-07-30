@@ -19,6 +19,11 @@
             <artifactId>nova-client</artifactId>
             <version>3.2.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.woorea</groupId>
+            <artifactId>glance-client</artifactId>
+            <version>3.2.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <profiles>

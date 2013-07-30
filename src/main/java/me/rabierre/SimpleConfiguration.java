@@ -20,6 +20,8 @@ public class SimpleConfiguration {
 
     public static final String TENANT_NAME = "admin";
 
-    // Compute
-    public static final String COMPUTE_URL = "http://10.0.1.3:9696/v2.0";
+    // Compute - handle Instances
+    public static final String NOVA_COMPUTE_URL = "http://10.0.1.3:9696/v2.0";
+    // Glance - handle Images
+    public static final String GLANCE_IMAGE_URL = "http://10.0.1.3:9292/v1";
 }
