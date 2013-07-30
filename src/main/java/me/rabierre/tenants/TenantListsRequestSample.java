@@ -1,4 +1,4 @@
-package me.rabierre.main;
+package me.rabierre.tenants;
 
 import com.woorea.openstack.keystone.Keystone;
 import com.woorea.openstack.keystone.model.Access;
@@ -25,6 +25,7 @@ public class TenantListsRequestSample {
 
         client.token(access.getToken().getId());
 
+        // GET http://10.0.1.3:5000/v2.0/tenants
         Tenants tenants = client.tenants().list().execute();
         System.out.println(tenants);
     }
