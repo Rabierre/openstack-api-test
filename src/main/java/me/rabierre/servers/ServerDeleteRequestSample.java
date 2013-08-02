@@ -18,7 +18,7 @@ public class ServerDeleteRequestSample {
     public static void main(String[] args) {
         Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
         Access access = keystone.tokens().authenticate(new UsernamePassword(SimpleConfiguration.KEYSTONE_USERNAME, SimpleConfiguration.KEYSTONE_PASSWORD))
-                .withTenantName("demo")
+                .withTenantName(SimpleConfiguration.TENANT_DEMO)
                 .execute();
 
         //use the token in the following requests

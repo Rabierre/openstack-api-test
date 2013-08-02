@@ -19,7 +19,7 @@ public class ServerListsRequestSample {
     public static void main(String[] args) {
         Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
         Access access = keystone.tokens().authenticate(new UsernamePassword(SimpleConfiguration.KEYSTONE_USERNAME, SimpleConfiguration.KEYSTONE_PASSWORD))
-                .withTenantName(SimpleConfiguration.TENANT_NAME)
+                .withTenantName(SimpleConfiguration.TENANT_ADMIN)
                 .execute();
 
         //use the token in the following requests

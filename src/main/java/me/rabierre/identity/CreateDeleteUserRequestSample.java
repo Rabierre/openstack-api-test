@@ -13,7 +13,7 @@ public class CreateDeleteUserRequestSample {
                 .tokens()
                 .authenticate()
                 .withUsernamePassword(SimpleConfiguration.KEYSTONE_USERNAME, SimpleConfiguration.KEYSTONE_PASSWORD)
-                .withTenantName(SimpleConfiguration.TENANT_NAME)
+                .withTenantName(SimpleConfiguration.TENANT_ADMIN)
                 .execute();
 
         Keystone admin = new Keystone(SimpleConfiguration.KEYSTONE_ADMIN_URL);

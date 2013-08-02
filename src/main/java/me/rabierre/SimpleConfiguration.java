@@ -18,7 +18,9 @@ public class SimpleConfiguration {
 
     public static final String KEYSTONE_ADMIN_URL = "http://10.0.1.3:35357/v2.0";
 
-    public static final String TENANT_NAME = "admin";
+    public static final String TENANT_ADMIN = "admin";
+
+    public static final String TENANT_DEMO = "demo";
 
     // Compute - handle Instances
     public static final String NOVA_COMPUTE_URL = "http://10.0.1.3:8774/v2";    // not v2.0!
