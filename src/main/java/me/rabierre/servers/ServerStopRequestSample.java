@@ -4,16 +4,10 @@ import com.woorea.openstack.keystone.Keystone;
 import com.woorea.openstack.keystone.model.Access;
 import com.woorea.openstack.keystone.model.authentication.UsernamePassword;
 import com.woorea.openstack.nova.Nova;
+import com.woorea.openstack.nova.api.ServersResource;
 import com.woorea.openstack.nova.model.Servers;
 import me.rabierre.SimpleConfiguration;
 
-/**
- * Created with IntelliJ IDEA.
- * User: rabierre
- * Date: 13. 7. 30.
- * Time: 오후 5:37
- * To change this template use File | Settings | File Templates.
- */
 public class ServerStopRequestSample {
     public static void main(String[] args) {
         Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
@@ -28,7 +22,9 @@ public class ServerStopRequestSample {
         novaClient.token(access.getToken().getId());
 
         Servers servers = novaClient.servers().list(true).execute();
-        /*ServersResource.StopServer stopServer = */novaClient.servers().pause(servers.getList().get(0).getId()).execute();
-        //stopServer.endpoint(SimpleConfiguration.NOVA_COMPUTE_URL).execute();
+
+        ServersResource.StopServer stopServer = novaClient.servers().stop(servers.getList().get(0).getId());
+        stopServer.endpoint(SimpleConfiguration.NOVA_COMPUTE_URL);
+        stopServer.execute();
     }
 }
