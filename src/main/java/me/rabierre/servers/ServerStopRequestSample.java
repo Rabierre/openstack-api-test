@@ -24,7 +24,6 @@ public class ServerStopRequestSample {
         Servers servers = novaClient.servers().list(true).execute();
 
         ServersResource.StopServer stopServer = novaClient.servers().stop(servers.getList().get(0).getId());
-        stopServer.endpoint(SimpleConfiguration.NOVA_COMPUTE_URL);
         stopServer.execute();
     }
 }

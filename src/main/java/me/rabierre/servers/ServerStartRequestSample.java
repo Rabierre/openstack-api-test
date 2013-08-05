@@ -24,7 +24,6 @@ public class ServerStartRequestSample {
         Servers servers = novaClient.servers().list(true).execute();
 
         ServersResource.StartServer startServer = novaClient.servers().start(servers.getList().get(0).getId());
-        startServer.endpoint(SimpleConfiguration.NOVA_COMPUTE_URL);
         startServer.execute();
     }
 }
