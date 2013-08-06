@@ -26,4 +26,6 @@ public class SimpleConfiguration {
     public static final String NOVA_COMPUTE_URL = "http://10.0.1.3:8774/v2";    // not v2.0!
     // Glance - handle Images
     public static final String GLANCE_IMAGE_URL = "http://10.0.1.3:9292/v1";    // v2 need more than Image class
+
+    public static final String QUANTUM_NETWORK_URL = "http://10.0.1.3:9696/v2.0";
 }
