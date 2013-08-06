@@ -4,6 +4,9 @@ import com.woorea.openstack.keystone.Keystone;
 import com.woorea.openstack.keystone.model.Access;
 import com.woorea.openstack.keystone.model.authentication.UsernamePassword;
 import com.woorea.openstack.nova.Nova;
+import com.woorea.openstack.nova.api.ServersResource;
+import com.woorea.openstack.nova.model.Server;
+import com.woorea.openstack.nova.model.ServerAction;
 import com.woorea.openstack.nova.model.Servers;
 import me.rabierre.SimpleConfiguration;
 
@@ -14,7 +17,7 @@ import me.rabierre.SimpleConfiguration;
  * Time: 오후 5:37
  * To change this template use File | Settings | File Templates.
  */
-public class ServerVNCConsoleRequestSample {
+public class ServerVNCConsoleOutputRequestSample {
     public static void main(String[] args) {
         Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
         Access access = keystone.tokens().authenticate(new UsernamePassword(SimpleConfiguration.KEYSTONE_USERNAME, SimpleConfiguration.KEYSTONE_PASSWORD))
@@ -28,7 +31,9 @@ public class ServerVNCConsoleRequestSample {
         novaClient.token(access.getToken().getId());
 
         Servers servers = novaClient.servers().list(true).execute();
+        Server server = servers.getList().get(0);
 
-        novaClient.servers().getVncConsole(servers.getList().get(0).getId(), "novnc").execute();
+        novaClient.servers().getConsoleOutput(server.getId(), 50).execute();
+
     }
 }
