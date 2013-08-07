@@ -4,19 +4,10 @@ import com.woorea.openstack.base.client.OpenStackSimpleTokenProvider;
 import com.woorea.openstack.keystone.Keystone;
 import com.woorea.openstack.keystone.model.Access;
 import com.woorea.openstack.keystone.model.Tenants;
-import com.woorea.openstack.keystone.model.authentication.UsernamePassword;
 import com.woorea.openstack.nova.Nova;
-import com.woorea.openstack.nova.api.ServersResource;
 import com.woorea.openstack.nova.model.*;
 import me.rabierre.SimpleConfiguration;
 
-/**
- * Created with IntelliJ IDEA.
- * User: rabierre
- * Date: 13. 7. 30.
- * Time: 오후 5:37
- * To change this template use File | Settings | File Templates.
- */
 public class ServerCreateRequestSample {
     public static void main(String[] args) {
         Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);

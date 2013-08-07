@@ -7,13 +7,6 @@ import com.woorea.openstack.nova.Nova;
 import com.woorea.openstack.nova.model.Servers;
 import me.rabierre.SimpleConfiguration;
 
-/**
- * Created with IntelliJ IDEA.
- * User: rabierre
- * Date: 13. 7. 30.
- * Time: 오후 5:37
- * To change this template use File | Settings | File Templates.
- */
 public class ServerUnpauseRequestSample {
     public static void main(String[] args) {
         Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
