@@ -4,9 +4,7 @@ import com.woorea.openstack.keystone.Keystone;
 import com.woorea.openstack.keystone.model.Access;
 import com.woorea.openstack.keystone.model.authentication.UsernamePassword;
 import com.woorea.openstack.nova.Nova;
-import com.woorea.openstack.nova.api.ServersResource;
 import com.woorea.openstack.nova.model.Server;
-import com.woorea.openstack.nova.model.ServerAction;
 import com.woorea.openstack.nova.model.Servers;
 import me.rabierre.SimpleConfiguration;
 
@@ -17,7 +15,6 @@ public class ServerVNCConsoleOutputRequestSample {
                 .withTenantName(SimpleConfiguration.TENANT_DEMO)
                 .execute();
 
-        //use the token in the following requests
         keystone.token(access.getToken().getId());
 
         Nova novaClient = new Nova(SimpleConfiguration.NOVA_COMPUTE_URL.concat("/").concat(access.getToken().getTenant().getId()));

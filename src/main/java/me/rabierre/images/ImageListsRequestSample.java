@@ -17,7 +17,6 @@ public class ImageListsRequestSample {
                 new UsernamePassword(SimpleConfiguration.KEYSTONE_USERNAME, SimpleConfiguration.KEYSTONE_PASSWORD))
                 .execute();
 
-        //use the token in the following requests
         keystone.token(access.getToken().getId());
 
         Tenants tenants = keystone.tenants().list().execute();
