@@ -15,8 +15,6 @@ public class ServerListsRequestSample {
                 .withTenantName(SimpleConfiguration.TENANT_ADMIN)
                 .execute();
 
-        keystone.token(access.getToken().getId());
-
         Nova novaClient = new Nova(SimpleConfiguration.NOVA_COMPUTE_URL.concat("/").concat(access.getToken().getTenant().getId()));
         novaClient.token(access.getToken().getId());
 
