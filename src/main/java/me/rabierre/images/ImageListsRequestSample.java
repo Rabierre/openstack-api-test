@@ -12,7 +12,7 @@ import me.rabierre.SimpleConfiguration;
 
 public class ImageListsRequestSample {
     public static void main(String[] args) {
-        Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
+        Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_ENDPOINT);
         Access access = keystone.tokens().authenticate(
                 new UsernamePassword(SimpleConfiguration.KEYSTONE_USERNAME, SimpleConfiguration.KEYSTONE_PASSWORD))
                 .execute();

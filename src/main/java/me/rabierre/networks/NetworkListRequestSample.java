@@ -13,9 +13,9 @@ import me.rabierre.SimpleConfiguration;
 
 public class NetworkListRequestSample {
     public static void main(String[] args) {
-        Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
+        Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_ENDPOINT);
         Access access = keystone.tokens().authenticate(
-                new UsernamePassword(SimpleConfiguration.KEYSTONE_USERNAME, SimpleConfiguration.KEYSTONE_PASSWORD))
+				new UsernamePassword(SimpleConfiguration.KEYSTONE_USERNAME, SimpleConfiguration.KEYSTONE_PASSWORD))
                 .execute();
 
         keystone.setTokenProvider(new OpenStackSimpleTokenProvider(access.getToken().getId()));
@@ -27,7 +27,7 @@ public class NetworkListRequestSample {
                     .authenticate(new TokenAuthentication(access.getToken().getId())).withTenantId(tenants.getList().get(0).getId())
                     .execute();
 
-            Quantum quantum = new Quantum(SimpleConfiguration.QUANTUM_NETWORK_URL);
+            Quantum quantum = new Quantum(SimpleConfiguration.QUANTUM_ENDPOINT);
             quantum.setTokenProvider(new OpenStackSimpleTokenProvider(access.getToken().getId()));
 
             Networks networks = quantum.networks().list().execute();

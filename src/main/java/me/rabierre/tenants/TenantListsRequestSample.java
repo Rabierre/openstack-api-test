@@ -8,7 +8,7 @@ import me.rabierre.SimpleConfiguration;
 
 public class TenantListsRequestSample {
     public static void main(String[] args) {
-        Keystone client = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
+        Keystone client = new Keystone(SimpleConfiguration.KEYSTONE_ENDPOINT);
 
         Access access = client
                 .tokens()

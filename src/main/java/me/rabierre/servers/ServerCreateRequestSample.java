@@ -10,7 +10,7 @@ import me.rabierre.SimpleConfiguration;
 
 public class ServerCreateRequestSample {
     public static void main(String[] args) {
-        Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
+        Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_ENDPOINT);
         Access access = keystone
                 .tokens()
                 .authenticate()
@@ -27,7 +27,7 @@ public class ServerCreateRequestSample {
                     .withToken(access.getToken().getId())
                     .withTenantId(tenants.getList().get(0).getId()).execute();
 
-            Nova nova = new Nova(SimpleConfiguration.NOVA_COMPUTE_URL.concat("/").concat(tenants
+            Nova nova = new Nova(SimpleConfiguration.NOVA_ENDPOINT.concat("/").concat(tenants
                     .getList().get(0).getId()));
             nova.setTokenProvider(new OpenStackSimpleTokenProvider(access.getToken().getId()));
 

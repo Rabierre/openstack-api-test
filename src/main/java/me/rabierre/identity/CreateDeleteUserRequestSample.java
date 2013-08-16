@@ -7,7 +7,7 @@ import me.rabierre.SimpleConfiguration;
 
 public class CreateDeleteUserRequestSample {
     public static void main(String[] args) {
-        Keystone client = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
+        Keystone client = new Keystone(SimpleConfiguration.KEYSTONE_ENDPOINT);
 
         Access access = client
                 .tokens()
@@ -16,16 +16,16 @@ public class CreateDeleteUserRequestSample {
                 .withTenantName(SimpleConfiguration.TENANT_ADMIN)
                 .execute();
 
-        Keystone admin = new Keystone(SimpleConfiguration.KEYSTONE_ADMIN_URL);
+        Keystone admin = new Keystone(SimpleConfiguration.KEYSTONE_EXTENSION_ENDPOINT);
         admin.token(access.getToken().getId());
 
         User user = new User();
-        user.setName("rabierre");
-        user.setPassword("passwd123");
+        user.setName("user");
+        user.setPassword("password");
         user.setEnabled(Boolean.TRUE);
 
         // POST http://10.0.1.3:35357/v2.0/users
         User created = admin.users().create(user).execute(); // execute returns instance of user created in keystone.
-        admin.users().delete(created.getId()).execute();
+        //admin.users().delete(created.getId()).execute();
     }
 }

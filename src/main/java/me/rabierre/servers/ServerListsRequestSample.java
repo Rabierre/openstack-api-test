@@ -10,12 +10,12 @@ import me.rabierre.SimpleConfiguration;
 
 public class ServerListsRequestSample {
     public static void main(String[] args) {
-        Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_PUBLIC_URL);
+        Keystone keystone = new Keystone(SimpleConfiguration.KEYSTONE_ENDPOINT);
         Access access = keystone.tokens().authenticate(new UsernamePassword(SimpleConfiguration.KEYSTONE_USERNAME, SimpleConfiguration.KEYSTONE_PASSWORD))
-                .withTenantName(SimpleConfiguration.TENANT_ADMIN)
+                .withTenantName(SimpleConfiguration.TENANT_DEMO)
                 .execute();
 
-        Nova novaClient = new Nova(SimpleConfiguration.NOVA_COMPUTE_URL.concat("/").concat(access.getToken().getTenant().getId()));
+        Nova novaClient = new Nova(SimpleConfiguration.NOVA_ENDPOINT.concat("/").concat(access.getToken().getTenant().getId()));
         novaClient.token(access.getToken().getId());
 
         Servers servers = novaClient.servers().list(false).execute();
